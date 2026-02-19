@@ -13,7 +13,9 @@ public class FibonacciTest {
     void testSequentialInsert5() {
         assertTimeoutPreemptively(Duration.ofSeconds(5), () -> {
             FibonacciHeap heap = new FibonacciHeap();
-            for (int i = 10; i <= 15; i++) heap.insert(i);
+            for (int i = 10; i <= 15; i++) {
+                heap.insert(i);
+            }
             assertNotNull(heap.min());
             assertEquals(10, heap.min().key);
         });
@@ -23,7 +25,9 @@ public class FibonacciTest {
     void testInsert100000() {
         assertTimeoutPreemptively(Duration.ofSeconds(5), () -> {
             FibonacciHeap heap = new FibonacciHeap();
-            for (int i = 1; i <= 100000; i++) heap.insert(i);
+            for (int i = 1; i <= 100000; i++) {
+                heap.insert(i);
+            }
             for (int i = 1; i <= 100000; i++) {
                 assertEquals(i, heap.min().key);
                 heap.removeMin();
@@ -35,7 +39,9 @@ public class FibonacciTest {
     void testReversedInsert() {
         assertTimeoutPreemptively(Duration.ofSeconds(5), () -> {
             FibonacciHeap heap = new FibonacciHeap();
-            for (int i = 1000; i >= 1; i--) heap.insert(i);
+            for (int i = 1000; i >= 1; i--) {
+                heap.insert(i);
+            }
             for (int i = 1; i <= 1000; i++) {
                 assertEquals(i, heap.min().key);
                 heap.removeMin();
@@ -48,10 +54,14 @@ public class FibonacciTest {
         assertTimeoutPreemptively(Duration.ofSeconds(5), () -> {
             FibonacciHeap heap = new FibonacciHeap();
             List<Integer> nums = new ArrayList<>();
-            for (int i = 1; i <= 10000; i++) nums.add(i);
+            for (int i = 1; i <= 10000; i++) {
+                nums.add(i);
+            }
             Collections.shuffle(nums);
 
-            for (int i : nums) heap.insert(i);
+            for (int i : nums) {
+                heap.insert(i);
+            }
 
             for (int i = 1; i <= 10000; i++) {
                 assertEquals(i, heap.min().key);
@@ -64,9 +74,11 @@ public class FibonacciTest {
     void testDuplicates() {
         assertTimeoutPreemptively(Duration.ofSeconds(5), () -> {
             FibonacciHeap heap = new FibonacciHeap();
-            int[] nums = {3,3,3,4,4,4};
+            int[] nums = {3, 3, 3, 4, 4, 4};
 
-            for (int i : nums) heap.insert(i);
+            for (int i : nums) {
+                heap.insert(i);
+            }
 
             for (int i : nums) {
                 assertEquals(i, heap.min().key);
@@ -90,7 +102,7 @@ public class FibonacciTest {
 
             assertEquals(1, h1.min().key);
 
-            int[] expected = {1,2,4,5};
+            int[] expected = {1, 2, 4, 5};
             for (int e : expected) {
                 assertEquals(e, h1.min().key);
                 h1.removeMin();
@@ -142,6 +154,89 @@ public class FibonacciTest {
 
             heap.removeMin();
             assertEquals(1, heap.min().key);
+        });
+    }
+
+    @Test
+    void testMinOnEmptyHeap() {
+        assertTimeoutPreemptively(Duration.ofSeconds(5), () -> {
+            FibonacciHeap heap = new FibonacciHeap();
+            assertNull(heap.min(), "min() on empty heap should return null");
+        });
+    }
+
+    @Test
+    void testRemoveMinOnEmptyHeap() {
+        assertTimeoutPreemptively(Duration.ofSeconds(5), () -> {
+            FibonacciHeap heap = new FibonacciHeap();
+            assertDoesNotThrow(heap::removeMin,
+                    "removeMin() on empty heap should not throw exception");
+            assertNull(heap.min());
+        });
+    }
+
+    @Test
+    void testSingleElementInsertRemove() {
+        assertTimeoutPreemptively(Duration.ofSeconds(5), () -> {
+            FibonacciHeap heap = new FibonacciHeap();
+            heap.insert(42);
+
+            assertEquals(42, heap.min().key);
+
+            heap.removeMin();
+            assertNull(heap.min(),
+                    "Heap should be empty after removing the only element");
+        });
+    }
+
+    @Test
+    void testMergeWithEmptyHeap() {
+        assertTimeoutPreemptively(Duration.ofSeconds(5), () -> {
+            FibonacciHeap h1 = new FibonacciHeap();
+            FibonacciHeap h2 = new FibonacciHeap();
+
+            h1.insert(5);
+            h1.insert(1);
+
+            h1.merge(h2);
+            assertEquals(1, h1.min().key);
+
+            h2.merge(h1);
+            assertEquals(1, h2.min().key);
+        });
+    }
+
+    @Test
+    void testDecreaseKeyWithoutCut() {
+        assertTimeoutPreemptively(Duration.ofSeconds(5), () -> {
+            FibonacciHeap heap = new FibonacciHeap();
+            FibonacciHeap.Node n1 = heap.insert(10);
+            heap.insert(20);
+
+            heap.decreaseKey(n1, 9);
+            assertEquals(9, heap.min().key);
+        });
+    }
+
+    @Test
+    void testReuseAfterFullClear() {
+        assertTimeoutPreemptively(Duration.ofSeconds(5), () -> {
+            FibonacciHeap heap = new FibonacciHeap();
+
+            for (int i = 1; i <= 10; i++) {
+                heap.insert(i);
+            }
+            for (int i = 1; i <= 10; i++) {
+                heap.removeMin();
+            }
+
+            assertNull(heap.min(), "Heap should be empty");
+
+            heap.insert(100);
+            heap.insert(50);
+
+            assertEquals(50, heap.min().key,
+                    "Heap should work correctly after being cleared");
         });
     }
 }
