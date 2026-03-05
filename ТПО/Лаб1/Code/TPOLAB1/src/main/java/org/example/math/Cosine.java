@@ -1,48 +1,68 @@
 package org.example.math;
 
-/**
- * Косинус через ряд Тейлора с редукцией аргумента.
- * Поведение аналогично Math.cos для NaN/Infinity (возвращает Double.NaN).
- */
+import java.math.BigDecimal;
+import java.math.MathContext;
+import java.math.RoundingMode;
+
 public final class Cosine {
 
-    private static final double TWO_PI = 2.0 * Math.PI;
+    private static final MathContext MC = new MathContext(34, RoundingMode.HALF_UP); // ~double precision
+    private static final BigDecimal TWO = new BigDecimal("2");
+    private static final BigDecimal PI = new BigDecimal(Math.PI, MC);
+    private static final BigDecimal TWO_PI = PI.multiply(TWO, MC);
+
+    private static int lastTermsCount = 0;
 
     private Cosine() {}
 
-    public static double cos(double x) {
-        return cos(x, 1e-15, 1000);
+    public static BigDecimal cos(BigDecimal x) {
+        return cos(x, new BigDecimal("1e-20"), 1000);
     }
 
-    public static double cos(double x, double eps, int maxTerms) {
-        if (Double.isNaN(x) || Double.isInfinite(x)) {
-            return Double.NaN;
-        }
+    public static BigDecimal cos(BigDecimal x, BigDecimal eps, int maxTerms) {
 
-        double y = x % TWO_PI;
-        if (y > Math.PI) y -= TWO_PI;
-        if (y <= -Math.PI) y += TWO_PI;
+        BigDecimal y = x.remainder(TWO_PI, MC);
+
+        if (y.compareTo(PI) > 0) {
+            y = y.subtract(TWO_PI, MC);
+        }
+        if (y.compareTo(PI.negate()) <= 0) {
+            y = y.add(TWO_PI, MC);
+        }
 
         boolean negate = false;
-        if (y > Math.PI / 2.0) {
-            y = Math.PI - y;
+        BigDecimal halfPi = PI.divide(TWO, MC);
+
+        if (y.compareTo(halfPi) > 0) {
+            y = PI.subtract(y, MC);
             negate = true;
-        } else if (y < -Math.PI / 2.0) {
-            y = -Math.PI - y;
+        } else if (y.compareTo(halfPi.negate()) < 0) {
+            y = PI.negate().subtract(y, MC);
             negate = true;
         }
 
-        double term = 1.0;    // k = 0
-        double sum = term;
-        double x2 = y * y;
+        BigDecimal term = BigDecimal.ONE;
+        BigDecimal sum = term;
+        BigDecimal x2 = y.multiply(y, MC);
+
+        lastTermsCount = 1;
 
         for (int k = 1; k <= maxTerms; k++) {
-            double denom = (2.0 * k - 1.0) * (2.0 * k);
-            term *= -x2 / denom;
-            sum += term;
-            if (Math.abs(term) < eps) break;
+            BigDecimal denom = new BigDecimal((2L * k - 1L) * (2L * k));
+            term = term.multiply(x2.negate(), MC)
+                       .divide(denom, MC);
+            sum = sum.add(term, MC);
+            lastTermsCount++;
+
+            if (term.abs().compareTo(eps) < 0) {
+                break;
+            }
         }
 
-        return negate ? -sum : sum;
+        return negate ? sum.negate(MC) : sum;
+    }
+
+    public static int getLastTermsCount() {
+        return lastTermsCount;
     }
 }

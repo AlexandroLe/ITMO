@@ -5,42 +5,28 @@ import java.util.ArrayList;
 public class Fibonacci {
 
     public static void main(String[] args) {
-        FibonacciHeap heap = new FibonacciHeap();
+        Fibonacci heap = new Fibonacci();
         heap.insert(5);
         heap.insert(3);
         heap.insert(7);
-        System.out.println(heap.min().key);
+        if (heap.min() != null) System.out.println(heap.min().key);
     }
-}
-
-class FibonacciHeap {
 
     Node min = null;
     private int n = 0;
-
-    public void clear() {
-        min = null;
-        n = 0;
-    }
 
     public boolean isEmpty() {
         return min == null;
     }
 
-    public int size() {
-        return n;
-    }
-
     public Node insert(Object data, Comparable key) {
         Node node = new Node(data, key);
-
         if (min == null) {
             min = node;
         } else {
             insertIntoRootList(node);
             if (key.compareTo(min.key) < 0) min = node;
         }
-
         n++;
         return node;
     }
@@ -69,18 +55,16 @@ class FibonacciHeap {
 
         removeFromRootList(z);
 
-        if (z == z.right) {
-            min = null;
-        } else {
-            min = z.right;
+        n--;
+
+        if (min != null) {
             consolidate();
         }
 
-        n--;
         return z.data;
     }
 
-    public void merge(FibonacciHeap other) {
+    public void merge(Fibonacci other) {
         if (other == null || other.min == null) return;
 
         if (this.min == null) {
@@ -98,16 +82,14 @@ class FibonacciHeap {
         thisRight.left = otherLeft;
         otherLeft.right = thisRight;
 
-        if (other.min.key.compareTo(this.min.key) < 0) {
-            this.min = other.min;
-        }
+        if (other.min.key.compareTo(this.min.key) < 0) this.min = other.min;
 
         this.n += other.n;
     }
 
     public void decreaseKey(Node x, Comparable k) {
-        if (k.compareTo(x.key) > 0)
-            throw new IllegalArgumentException("new key is greater");
+        if (x == null) return;
+        if (k.compareTo(x.key) > 0) throw new IllegalArgumentException("new key is greater");
 
         x.key = k;
         Node y = x.parent;
@@ -117,21 +99,27 @@ class FibonacciHeap {
             cascadingCut(y);
         }
 
-        if (x.key.compareTo(min.key) < 0) min = x;
+        if (min == null) {
+            min = x;
+            x.left = x.right = x;
+        } else if (x.key.compareTo(min.key) < 0) {
+            min = x;
+        }
     }
 
     public void delete(Node x) {
+        if (x == null || min == null) return;
         decreaseKey(x, Integer.MIN_VALUE);
         removeMin();
     }
 
     private void consolidate() {
+        if (min == null) return;
         int size = ((int) Math.floor(Math.log(n) / Math.log(2))) + 2;
         Node[] A = new Node[size];
 
         ArrayList<Node> roots = new ArrayList<>();
         Node x = min;
-
         if (x != null) {
             do {
                 roots.add(x);
@@ -142,7 +130,6 @@ class FibonacciHeap {
         for (Node w : roots) {
             x = w;
             int d = x.degree;
-
             while (A[d] != null) {
                 Node y = A[d];
                 if (x.key.compareTo(y.key) > 0) {
@@ -163,7 +150,6 @@ class FibonacciHeap {
         }
 
         min = null;
-
         for (Node a : A) {
             if (a != null) {
                 if (min == null) {
@@ -180,7 +166,6 @@ class FibonacciHeap {
 
     private void link(Node y, Node x) {
         removeFromRootList(y);
-
         y.parent = x;
         y.mark = false;
 
@@ -199,6 +184,8 @@ class FibonacciHeap {
     }
 
     private void cut(Node x, Node y) {
+        if (x == null || y == null) return;
+
         if (x.right == x) {
             y.child = null;
         } else {
@@ -214,11 +201,11 @@ class FibonacciHeap {
     }
 
     private void cascadingCut(Node y) {
+        if (y == null) return;
         Node z = y.parent;
         if (z != null) {
-            if (!y.mark) {
-                y.mark = true;
-            } else {
+            if (!y.mark) y.mark = true;
+            else {
                 cut(y, z);
                 cascadingCut(z);
             }
@@ -226,15 +213,24 @@ class FibonacciHeap {
     }
 
     private void insertIntoRootList(Node node) {
+        if (min == null) return;
         node.left = min;
         node.right = min.right;
         min.right.left = node;
         min.right = node;
     }
 
-    private void removeFromRootList(Node node) {
-        node.left.right = node.right;
-        node.right.left = node.left;
+    public void removeFromRootList(Node node) {
+        if (node == null || min == null) return;
+
+        if (node.right == node) {
+            min = null;
+        } else {
+            node.left.right = node.right;
+            node.right.left = node.left;
+            if (min == node) min = node.right;
+        }
+        node.left = node.right = node;
     }
 
     static class Node {
