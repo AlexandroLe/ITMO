@@ -4,47 +4,90 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 import org.junit.jupiter.params.provider.Arguments;
 
+import java.math.BigDecimal;
+import java.math.MathContext;
 import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class CosineParameterizedTest {
 
-    @ParameterizedTest(name = "[{index}] x={0}, expect={1}, tol={2}")
-    @MethodSource("valuesProvider")
-    void parameterizedCosTests(double x, Double expected, double tol) {
-        double actual = Cosine.cos(x);
+    private static final MathContext MC = new MathContext(50);
 
-        if (expected == null) {
-            assertTrue(Double.isNaN(actual), () -> "Expected NaN for input: " + x + ", but was: " + actual);
-        } else {
-            assertEquals(expected, actual, tol, () -> String.format("x=%.18g, expected=%.18g, actual=%.18g", x, expected, actual));
-        }
+    @ParameterizedTest(name = "[{index}] x={0}")
+    @MethodSource("valuesProvider")
+    void parameterizedCosTests(BigDecimal x) {
+
+        BigDecimal actual = Cosine.cos(x);
+
+        double expectedDouble = Math.cos(x.doubleValue());
+        BigDecimal expected = BigDecimal.valueOf(expectedDouble);
+
+        BigDecimal tolerance = x.abs().compareTo(new BigDecimal("1000")) > 0
+                ? new BigDecimal("1e-9")  // для больших аргументов
+                : new BigDecimal("1e-12"); // для обычных
+
+        BigDecimal diff = actual.subtract(expected, MC).abs();
+
+        assertTrue(diff.compareTo(tolerance) <= 0,
+                () -> "x=" + x + " expected=" + expected + " actual=" + actual +
+                        " diff=" + diff + " tolerance=" + tolerance);
+
+        assertTrue(Cosine.getLastTermsCount() > 0, "Used terms count should be > 0");
+        assertTrue(Cosine.getLastTermsCount() <= 1000, "Used terms count should not exceed maxTerms");
     }
 
     static Stream<Arguments> valuesProvider() {
+
+        BigDecimal PI = new BigDecimal(Math.PI, MC);
+
         return Stream.of(
-                Arguments.of(0.0, Math.cos(0.0), 1e-15),
 
-                Arguments.of(1e-6, Math.cos(1e-6), 1e-12),
-                Arguments.of(-1e-6, Math.cos(-1e-6), 1e-12),
+                // 0
+                Arguments.of(BigDecimal.ZERO),
 
-                Arguments.of(1e-308, Math.cos(1e-308), 1e-15),
+                // ±π
+                Arguments.of(PI),
+                Arguments.of(PI.negate()),
 
-                Arguments.of(Math.PI / 2.0, Math.cos(Math.PI / 2.0), 1e-12),
-                Arguments.of(-Math.PI / 2.0, Math.cos(-Math.PI / 2.0), 1e-12),
-                Arguments.of(Math.PI, Math.cos(Math.PI), 1e-12),
-                Arguments.of(-Math.PI, Math.cos(-Math.PI), 1e-12),
-                Arguments.of(3.0 * Math.PI / 4.0, Math.cos(3.0 * Math.PI / 4.0), 1e-12),
+                // ±π/2
+                Arguments.of(PI.divide(new BigDecimal("2"), MC)),
+                Arguments.of(PI.divide(new BigDecimal("2"), MC).negate()),
 
-                Arguments.of(1e6, Math.cos(1e6), 1e-9),
-                Arguments.of(-1e6, Math.cos(-1e6), 1e-9),
+                // ±π/4
+                Arguments.of(PI.divide(new BigDecimal("4"), MC)),
+                Arguments.of(PI.divide(new BigDecimal("4"), MC).negate()),
 
-                Arguments.of(2.0 * Math.PI, Math.cos(2.0 * Math.PI), 1e-15),
+                // ±π/3
+                Arguments.of(PI.divide(new BigDecimal("3"), MC)),
+                Arguments.of(PI.divide(new BigDecimal("3"), MC).negate()),
 
-                Arguments.of(Double.NaN, null, 0.0),
-                Arguments.of(Double.POSITIVE_INFINITY, null, 0.0),
-                Arguments.of(Double.NEGATIVE_INFINITY, null, 0.0)
+                // π/6
+                Arguments.of(PI.divide(new BigDecimal("6"), MC)),
+
+                // 3π/4
+                Arguments.of(PI.multiply(new BigDecimal("3"), MC)
+                               .divide(new BigDecimal("4"), MC)),
+
+                // 53π/180
+                Arguments.of(PI.multiply(new BigDecimal("53"), MC)
+                               .divide(new BigDecimal("180"), MC)),
+
+                // 190π/180
+                Arguments.of(PI.multiply(new BigDecimal("190"), MC)
+                               .divide(new BigDecimal("180"), MC)),
+
+                // -261π/180
+                Arguments.of(PI.multiply(new BigDecimal("-261"), MC)
+                               .divide(new BigDecimal("180"), MC)),
+
+                // ±10⁻¹⁰
+                Arguments.of(new BigDecimal("1e-10")),
+                Arguments.of(new BigDecimal("-1e-10")),
+
+                // ±10⁶
+                Arguments.of(new BigDecimal("1e6")),
+                Arguments.of(new BigDecimal("-1e6"))
         );
     }
 }
