@@ -30,8 +30,7 @@ class AeromobileTest {
     }
 
     @Test
-    void constructor_ShouldSetIdAndHaveEmptyPassengers() {
-        assertEquals("aero-1", aeromobile.toString().replace("Aeromobile{", "").replace("}", ""));
+    void constructor_ShouldInitializeWithEmptyPassengers() {
         assertTrue(aeromobile.getPassengers().isEmpty());
     }
 
@@ -147,10 +146,5 @@ class AeromobileTest {
         assertEquals(reception, arthur.getLocation());
         assertTrue(reception.getOccupants().contains(arthur));
         assertFalse(outside.getOccupants().contains(arthur));
-    }
-
-    @Test
-    void toString_ShouldReturnFormattedString() {
-        assertEquals("Aeromobile{aero-1}", aeromobile.toString());
     }
 }

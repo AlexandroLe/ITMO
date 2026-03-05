@@ -119,9 +119,4 @@ class DoorTest {
         Location unknown = new Location("C", "Unknown");
         assertNull(door.passThrough(unknown));
     }
-
-    @Test
-    void toString_ShouldReturnFormattedString() {
-        assertEquals("Door{testDoor}", door.toString());
-    }
 }

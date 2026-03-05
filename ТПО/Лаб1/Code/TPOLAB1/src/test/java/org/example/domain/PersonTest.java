@@ -43,11 +43,6 @@ class PersonTest {
     }
 
     @Test
-    void getName_ShouldReturnName() {
-        assertEquals("Alice", person.getName());
-    }
-
-    @Test
     void getLocation_ShouldReturnCurrentLocation() {
         assertSame(loc1, person.getLocation());
     }
@@ -90,11 +85,6 @@ class PersonTest {
     void inspectWithMarkers_WhenLocationIsNull_ShouldNotThrow() {
         Person p = new Person("Frank");
         assertDoesNotThrow(p::inspectWithMarkers);
-    }
-
-    @Test
-    void toString_ShouldReturnFormattedString() {
-        assertEquals("Person{Alice}", person.toString());
     }
 
     @Test

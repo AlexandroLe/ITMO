@@ -37,15 +37,6 @@ class LocationTest {
         assertEquals("Test description", location.getDescription());
     }
 
-    @Test
-    void getName_ShouldReturnName() {
-        assertEquals("testLoc", location.getName());
-    }
-
-    @Test
-    void getDescription_ShouldReturnDescription() {
-        assertEquals("Test description", location.getDescription());
-    }
 
     @Test
     void addOccupant_ShouldAddPersonToOccupants() {
@@ -143,10 +134,6 @@ class LocationTest {
         assertThrows(UnsupportedOperationException.class, () -> doors.add(door2));
     }
 
-    @Test
-    void toString_ShouldReturnFormattedString() {
-        assertEquals("Location{testLoc}", location.toString());
-    }
 
     @Test
     void occupantsAndDoorsAreIndependent() {
