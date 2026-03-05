@@ -89,7 +89,7 @@ class PersonTest {
     @Test
     void inspectWithMarkers_WhenLocationIsNull_ShouldNotThrow() {
         Person p = new Person("Frank");
-        assertDoesNotThrow(() -> p.inspectWithMarkers());
+        assertDoesNotThrow(p::inspectWithMarkers);
     }
 
     @Test
