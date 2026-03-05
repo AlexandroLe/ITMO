@@ -15,17 +15,8 @@ public class Fibonacci {
     Node min = null;
     private int n = 0;
 
-    public void clear() {
-        min = null;
-        n = 0;
-    }
-
     public boolean isEmpty() {
         return min == null;
-    }
-
-    public int size() {
-        return n;
     }
 
     public Node insert(Object data, Comparable key) {
@@ -96,25 +87,25 @@ public class Fibonacci {
         this.n += other.n;
     }
 
-public void decreaseKey(Node x, Comparable k) {
-    if (x == null) return;
-    if (k.compareTo(x.key) > 0) throw new IllegalArgumentException("new key is greater");
+    public void decreaseKey(Node x, Comparable k) {
+        if (x == null) return;
+        if (k.compareTo(x.key) > 0) throw new IllegalArgumentException("new key is greater");
 
-    x.key = k;
-    Node y = x.parent;
+        x.key = k;
+        Node y = x.parent;
 
-    if (y != null && x.key.compareTo(y.key) < 0) {
-        cut(x, y);
-        cascadingCut(y);
+        if (y != null && x.key.compareTo(y.key) < 0) {
+            cut(x, y);
+            cascadingCut(y);
+        }
+
+        if (min == null) {
+            min = x;
+            x.left = x.right = x;
+        } else if (x.key.compareTo(min.key) < 0) {
+            min = x;
+        }
     }
-
-    if (min == null) {
-        min = x;
-        x.left = x.right = x;
-    } else if (x.key.compareTo(min.key) < 0) {
-        min = x;
-    }
-}
 
     public void delete(Node x) {
         if (x == null || min == null) return;
