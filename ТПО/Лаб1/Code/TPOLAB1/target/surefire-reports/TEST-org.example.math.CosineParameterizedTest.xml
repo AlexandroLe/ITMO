@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="org.example.math.CosineParameterizedTest" time="0.108" tests="18" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="17"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1251"/>
+    <property name="java.class.path" value="C:\Users\Admin\Documents\ITMO\ТПО\tpo_1\ITMO\ТПО\Лаб1\Code\TPOLAB1\target\test-classes;C:\Users\Admin\Documents\ITMO\ТПО\tpo_1\ITMO\ТПО\Лаб1\Code\TPOLAB1\target\classes;C:\Users\Admin\.m2\repository\org\junit\jupiter\junit-jupiter\5.9.3\junit-jupiter-5.9.3.jar;C:\Users\Admin\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.9.3\junit-jupiter-api-5.9.3.jar;C:\Users\Admin\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\Admin\.m2\repository\org\junit\platform\junit-platform-commons\1.9.3\junit-platform-commons-1.9.3.jar;C:\Users\Admin\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\Admin\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.9.3\junit-jupiter-params-5.9.3.jar;C:\Users\Admin\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.9.3\junit-jupiter-engine-5.9.3.jar;C:\Users\Admin\.m2\repository\org\junit\platform\junit-platform-engine\1.9.3\junit-platform-engine-1.9.3.jar;"/>
+    <property name="java.vm.vendor" value="Eclipse Adoptium"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="https://adoptium.net/"/>
+    <property name="user.timezone" value="Europe/Moscow"/>
+    <property name="os.name" value="Windows 11"/>
+    <property name="java.vm.specification.version" value="17"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="RU"/>
+    <property name="sun.boot.library.path" value="C:\Java\jdk-17\jdk-17.0.12+7\bin"/>
+    <property name="sun.java.command" value="C:\Users\Admin\AppData\Local\Temp\surefire2443226446252256297\surefirebooter-20260306001421515_3.jar C:\Users\Admin\AppData\Local\Temp\surefire2443226446252256297 2026-03-06T00-14-21_192-jvmRun1 surefire-20260306001421515_1tmp surefire_0-20260306001421515_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="test" value="CosineParameterizedTest"/>
+    <property name="surefire.test.class.path" value="C:\Users\Admin\Documents\ITMO\ТПО\tpo_1\ITMO\ТПО\Лаб1\Code\TPOLAB1\target\test-classes;C:\Users\Admin\Documents\ITMO\ТПО\tpo_1\ITMO\ТПО\Лаб1\Code\TPOLAB1\target\classes;C:\Users\Admin\.m2\repository\org\junit\jupiter\junit-jupiter\5.9.3\junit-jupiter-5.9.3.jar;C:\Users\Admin\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.9.3\junit-jupiter-api-5.9.3.jar;C:\Users\Admin\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\Admin\.m2\repository\org\junit\platform\junit-platform-commons\1.9.3\junit-platform-commons-1.9.3.jar;C:\Users\Admin\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\Admin\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.9.3\junit-jupiter-params-5.9.3.jar;C:\Users\Admin\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.9.3\junit-jupiter-engine-5.9.3.jar;C:\Users\Admin\.m2\repository\org\junit\platform\junit-platform-engine\1.9.3\junit-platform-engine-1.9.3.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\Admin"/>
+    <property name="user.language" value="ru"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2024-07-16"/>
+    <property name="java.home" value="C:\Java\jdk-17\jdk-17.0.12+7"/>
+    <property name="file.separator" value="\"/>
+    <property name="basedir" value="C:\Users\Admin\Documents\ITMO\ТПО\tpo_1\ITMO\ТПО\Лаб1\Code\TPOLAB1"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="surefire.real.class.path" value="C:\Users\Admin\AppData\Local\Temp\surefire2443226446252256297\surefirebooter-20260306001421515_3.jar"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="17.0.12+7"/>
+    <property name="user.name" value="Admin"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="Cp1251"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="Temurin-17.0.12+7"/>
+    <property name="localRepository" value="C:\Users\Admin\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://github.com/adoptium/adoptium-support/issues"/>
+    <property name="java.io.tmpdir" value="C:\Users\Admin\AppData\Local\Temp\"/>
+    <property name="java.version" value="17.0.12"/>
+    <property name="user.dir" value="C:\Users\Admin\Documents\ITMO\ТПО\tpo_1\ITMO\ТПО\Лаб1\Code\TPOLAB1"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="native.encoding" value="Cp1251"/>
+    <property name="java.library.path" value="C:\Java\jdk-17\jdk-17.0.12+7\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Users\Admin\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\Admin\bin;C:\Users\Admin\AppData\Roaming\Code\User\globalStorage\github.copilot-chat\debugCommand;C:\Users\Admin\AppData\Roaming\Code\User\globalStorage\github.copilot-chat\copilotCli;C:\Users\Admin\AppData\Local\Programs\Microsoft VS Code;C:\Windows\System32;C:\Tools\apache-maven-3.9.5\bin;C:\Tools\apache-maven-3.9.5\bin;%PATH%;C:\Apache\Maven\maven\bin;C:\Java\jdk-17\jdk-17.0.12+7\bin;C:\Apache\Maven\apache-maven\bin;C:\Program Files\nodejs;C:\Windows\System32;C:\Windows;C:\Windows\System32\OpenSSH;C:\Java\jdk-17\jdk-17.0.12+7\bin;C:\Apache\Maven\apache-maven\bin;C:\Users\Admin\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Admin\AppData\Roaming\npm;C:\Users\Admin\AppData\Local\Programs\cursor\resources\app\bin;C:\php;C:\Users\Admin\.vscode\extensions\vscjava.vscode-java-debug-0.58.5\bundled\scripts\noConfigScripts;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl;."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.vendor" value="Eclipse Adoptium"/>
+    <property name="java.vm.version" value="17.0.12+7"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="61.0"/>
+  </properties>
+  <testcase name="parameterizedCosTests(BigDecimal)[1]" classname="org.example.math.CosineParameterizedTest" time="0.037"/>
+  <testcase name="parameterizedCosTests(BigDecimal)[2]" classname="org.example.math.CosineParameterizedTest" time="0.001"/>
+  <testcase name="parameterizedCosTests(BigDecimal)[3]" classname="org.example.math.CosineParameterizedTest" time="0.001"/>
+  <testcase name="parameterizedCosTests(BigDecimal)[4]" classname="org.example.math.CosineParameterizedTest" time="0.001"/>
+  <testcase name="parameterizedCosTests(BigDecimal)[5]" classname="org.example.math.CosineParameterizedTest" time="0.002"/>
+  <testcase name="parameterizedCosTests(BigDecimal)[6]" classname="org.example.math.CosineParameterizedTest" time="0.001"/>
+  <testcase name="parameterizedCosTests(BigDecimal)[7]" classname="org.example.math.CosineParameterizedTest" time="0.002"/>
+  <testcase name="parameterizedCosTests(BigDecimal)[8]" classname="org.example.math.CosineParameterizedTest" time="0.001"/>
+  <testcase name="parameterizedCosTests(BigDecimal)[9]" classname="org.example.math.CosineParameterizedTest" time="0.002"/>
+  <testcase name="parameterizedCosTests(BigDecimal)[10]" classname="org.example.math.CosineParameterizedTest" time="0.001"/>
+  <testcase name="parameterizedCosTests(BigDecimal)[11]" classname="org.example.math.CosineParameterizedTest" time="0.001"/>
+  <testcase name="parameterizedCosTests(BigDecimal)[12]" classname="org.example.math.CosineParameterizedTest" time="0.001"/>
+  <testcase name="parameterizedCosTests(BigDecimal)[13]" classname="org.example.math.CosineParameterizedTest" time="0.001"/>
+  <testcase name="parameterizedCosTests(BigDecimal)[14]" classname="org.example.math.CosineParameterizedTest" time="0.001"/>
+  <testcase name="parameterizedCosTests(BigDecimal)[15]" classname="org.example.math.CosineParameterizedTest" time="0.001"/>
+  <testcase name="parameterizedCosTests(BigDecimal)[16]" classname="org.example.math.CosineParameterizedTest" time="0.001"/>
+  <testcase name="parameterizedCosTests(BigDecimal)[17]" classname="org.example.math.CosineParameterizedTest" time="0.001"/>
+  <testcase name="parameterizedCosTests(BigDecimal)[18]" classname="org.example.math.CosineParameterizedTest" time="0.001"/>
+</testsuite>
