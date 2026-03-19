@@ -1,4 +1,4 @@
-package ru.itmo.tpo.lab2;
+package ru.itmo.tpo.lab2.unit;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
