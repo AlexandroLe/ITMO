@@ -55,8 +55,7 @@ public class EquationSystem {
                             .pow(3, mc);
 
             BigDecimal second =
-                    secVal.subtract(sinVal, mc)
-                            .negate(); 
+                    secVal.subtract(sinVal, mc);
 
             BigDecimal combined =
                     first.subtract(second, mc)
