@@ -1,10 +1,10 @@
 package ru.itmo.tpo.lab2.log;
 
-import ru.itmo.tpo.lab2.function.MathFunction;
+import ru.itmo.tpo.lab2.function.AbstractMathFunction;
 
 import java.math.*;
 
-public class LogNBase implements MathFunction {
+public class LogNBase extends AbstractMathFunction {
 
     private final Ln ln;
     private final BigDecimal base;

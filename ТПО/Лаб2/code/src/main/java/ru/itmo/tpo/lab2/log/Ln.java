@@ -1,9 +1,9 @@
 package ru.itmo.tpo.lab2.log;
 
-import ru.itmo.tpo.lab2.function.MathFunction;
+import ru.itmo.tpo.lab2.function.AbstractMathFunction;
 import java.math.*;
 
-public class Ln implements MathFunction {
+public class Ln extends AbstractMathFunction {
 
     private static final int DEFAULT_MAX_ITERATIONS = 1000;
     private int lastTermsCount = 0;

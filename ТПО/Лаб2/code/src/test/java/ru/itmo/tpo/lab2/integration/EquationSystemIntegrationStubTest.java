@@ -3,7 +3,7 @@ package ru.itmo.tpo.lab2.integration;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import ru.itmo.tpo.lab2.EquationSystem;
-import ru.itmo.tpo.lab2.function.MathFunction;
+import ru.itmo.tpo.lab2.function.AbstractMathFunction;
 
 import java.math.BigDecimal;
 import java.math.MathContext;
@@ -28,15 +28,15 @@ public class EquationSystemIntegrationStubTest {
         BigDecimal x = new BigDecimal("-0.7853981633974483"); // -π/4
 
         // Создаём заглушки для всех девяти модулей
-        MathFunction sin = Mockito.mock(MathFunction.class);
-        MathFunction cos = Mockito.mock(MathFunction.class);
-        MathFunction tan = Mockito.mock(MathFunction.class);
-        MathFunction cot = Mockito.mock(MathFunction.class);
-        MathFunction sec = Mockito.mock(MathFunction.class);
-        MathFunction csc = Mockito.mock(MathFunction.class);
-        MathFunction ln = Mockito.mock(MathFunction.class);
-        MathFunction log3 = Mockito.mock(MathFunction.class);
-        MathFunction log5 = Mockito.mock(MathFunction.class);
+        AbstractMathFunction sin = Mockito.mock(AbstractMathFunction.class);
+        AbstractMathFunction cos = Mockito.mock(AbstractMathFunction.class);
+        AbstractMathFunction tan = Mockito.mock(AbstractMathFunction.class);
+        AbstractMathFunction cot = Mockito.mock(AbstractMathFunction.class);
+        AbstractMathFunction sec = Mockito.mock(AbstractMathFunction.class);
+        AbstractMathFunction csc = Mockito.mock(AbstractMathFunction.class);
+        AbstractMathFunction ln = Mockito.mock(AbstractMathFunction.class);
+        AbstractMathFunction log3 = Mockito.mock(AbstractMathFunction.class);
+        AbstractMathFunction log5 = Mockito.mock(AbstractMathFunction.class);
 
         // Точные значения тригонометрических функций для x = -π/4
         BigDecimal sinVal = new BigDecimal("-0.7071067811865475");
@@ -88,15 +88,15 @@ public class EquationSystemIntegrationStubTest {
         // given
         BigDecimal x = new BigDecimal("2");
 
-        MathFunction sin = Mockito.mock(MathFunction.class);
-        MathFunction cos = Mockito.mock(MathFunction.class);
-        MathFunction tan = Mockito.mock(MathFunction.class);
-        MathFunction cot = Mockito.mock(MathFunction.class);
-        MathFunction sec = Mockito.mock(MathFunction.class);
-        MathFunction csc = Mockito.mock(MathFunction.class);
-        MathFunction ln = Mockito.mock(MathFunction.class);
-        MathFunction log3 = Mockito.mock(MathFunction.class);
-        MathFunction log5 = Mockito.mock(MathFunction.class);
+        AbstractMathFunction sin = Mockito.mock(AbstractMathFunction.class);
+        AbstractMathFunction cos = Mockito.mock(AbstractMathFunction.class);
+        AbstractMathFunction tan = Mockito.mock(AbstractMathFunction.class);
+        AbstractMathFunction cot = Mockito.mock(AbstractMathFunction.class);
+        AbstractMathFunction sec = Mockito.mock(AbstractMathFunction.class);
+        AbstractMathFunction csc = Mockito.mock(AbstractMathFunction.class);
+        AbstractMathFunction ln = Mockito.mock(AbstractMathFunction.class);
+        AbstractMathFunction log3 = Mockito.mock(AbstractMathFunction.class);
+        AbstractMathFunction log5 = Mockito.mock(AbstractMathFunction.class);
 
         // Точные значения логарифмических функций для x = 2
         BigDecimal lnVal = new BigDecimal("0.6931471805599453");

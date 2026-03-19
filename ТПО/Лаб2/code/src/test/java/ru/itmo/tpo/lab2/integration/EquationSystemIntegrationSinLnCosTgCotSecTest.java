@@ -3,7 +3,7 @@ package ru.itmo.tpo.lab2.integration;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import ru.itmo.tpo.lab2.EquationSystem;
-import ru.itmo.tpo.lab2.function.MathFunction;
+import ru.itmo.tpo.lab2.function.AbstractMathFunction;
 import ru.itmo.tpo.lab2.log.Ln;
 import ru.itmo.tpo.lab2.trig.*;
 
@@ -73,9 +73,9 @@ public class EquationSystemIntegrationSinLnCosTgCotSecTest {
         Cot cot = new Cot(tan);
         Sec sec = new Sec(cos);
 
-        MathFunction csc = Mockito.mock(MathFunction.class);
-        MathFunction log3 = Mockito.mock(MathFunction.class);
-        MathFunction log5 = Mockito.mock(MathFunction.class);
+        AbstractMathFunction csc = Mockito.mock(AbstractMathFunction.class);
+        AbstractMathFunction log3 = Mockito.mock(AbstractMathFunction.class);
+        AbstractMathFunction log5 = Mockito.mock(AbstractMathFunction.class);
 
         BigDecimal sinVal = sin.calculate(x, EPS);
         BigDecimal cosVal = cos.calculate(x, EPS);
@@ -121,9 +121,9 @@ public class EquationSystemIntegrationSinLnCosTgCotSecTest {
         Cot cot =  new Cot(tan);
         Sec sec = new Sec(cos);
 
-        MathFunction csc = Mockito.mock(MathFunction.class);
-        MathFunction log3 = Mockito.mock(MathFunction.class);
-        MathFunction log5 = Mockito.mock(MathFunction.class);
+        AbstractMathFunction csc = Mockito.mock(AbstractMathFunction.class);
+        AbstractMathFunction log3 = Mockito.mock(AbstractMathFunction.class);
+        AbstractMathFunction log5 = Mockito.mock(AbstractMathFunction.class);
 
         BigDecimal lnVal = ln.calculate(x, EPS);
 

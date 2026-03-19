@@ -3,7 +3,7 @@ package ru.itmo.tpo.lab2.integration;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import ru.itmo.tpo.lab2.EquationSystem;
-import ru.itmo.tpo.lab2.function.MathFunction;
+import ru.itmo.tpo.lab2.function.AbstractMathFunction;
 import ru.itmo.tpo.lab2.log.Ln;
 import ru.itmo.tpo.lab2.trig.Sin;
 
@@ -28,13 +28,13 @@ public class EquationSystemIntegrationSinLnTest {
         Sin sin = new Sin();
         Ln ln = new Ln();
 
-        MathFunction cos = Mockito.mock(MathFunction.class);
-        MathFunction tan = Mockito.mock(MathFunction.class);
-        MathFunction cot = Mockito.mock(MathFunction.class);
-        MathFunction sec = Mockito.mock(MathFunction.class);
-        MathFunction csc = Mockito.mock(MathFunction.class);
-        MathFunction log3 = Mockito.mock(MathFunction.class);
-        MathFunction log5 = Mockito.mock(MathFunction.class);
+        AbstractMathFunction cos = Mockito.mock(AbstractMathFunction.class);
+        AbstractMathFunction tan = Mockito.mock(AbstractMathFunction.class);
+        AbstractMathFunction cot = Mockito.mock(AbstractMathFunction.class);
+        AbstractMathFunction sec = Mockito.mock(AbstractMathFunction.class);
+        AbstractMathFunction csc = Mockito.mock(AbstractMathFunction.class);
+        AbstractMathFunction log3 = Mockito.mock(AbstractMathFunction.class);
+        AbstractMathFunction log5 = Mockito.mock(AbstractMathFunction.class);
 
         BigDecimal sinVal = sin.calculate(x, EPS);
         BigDecimal cosVal = new BigDecimal("0.7071067811865476");
@@ -78,13 +78,13 @@ public class EquationSystemIntegrationSinLnTest {
         Sin sin = new Sin();
         Ln ln = new Ln();
 
-        MathFunction cos = Mockito.mock(MathFunction.class);
-        MathFunction tan = Mockito.mock(MathFunction.class);
-        MathFunction cot = Mockito.mock(MathFunction.class);
-        MathFunction sec = Mockito.mock(MathFunction.class);
-        MathFunction csc = Mockito.mock(MathFunction.class);
-        MathFunction log3 = Mockito.mock(MathFunction.class);
-        MathFunction log5 = Mockito.mock(MathFunction.class);
+        AbstractMathFunction cos = Mockito.mock(AbstractMathFunction.class);
+        AbstractMathFunction tan = Mockito.mock(AbstractMathFunction.class);
+        AbstractMathFunction cot = Mockito.mock(AbstractMathFunction.class);
+        AbstractMathFunction sec = Mockito.mock(AbstractMathFunction.class);
+        AbstractMathFunction csc = Mockito.mock(AbstractMathFunction.class);
+        AbstractMathFunction log3 = Mockito.mock(AbstractMathFunction.class);
+        AbstractMathFunction log5 = Mockito.mock(AbstractMathFunction.class);
 
         BigDecimal sinVal = sin.calculate(x, EPS);
 
@@ -129,13 +129,13 @@ public class EquationSystemIntegrationSinLnTest {
         Sin sin = new Sin();
         Ln ln = new Ln();
 
-        MathFunction cos = Mockito.mock(MathFunction.class);
-        MathFunction tan = Mockito.mock(MathFunction.class);
-        MathFunction cot = Mockito.mock(MathFunction.class);
-        MathFunction sec = Mockito.mock(MathFunction.class);
-        MathFunction csc = Mockito.mock(MathFunction.class);
-        MathFunction log3 = Mockito.mock(MathFunction.class);
-        MathFunction log5 = Mockito.mock(MathFunction.class);
+        AbstractMathFunction cos = Mockito.mock(AbstractMathFunction.class);
+        AbstractMathFunction tan = Mockito.mock(AbstractMathFunction.class);
+        AbstractMathFunction cot = Mockito.mock(AbstractMathFunction.class);
+        AbstractMathFunction sec = Mockito.mock(AbstractMathFunction.class);
+        AbstractMathFunction csc = Mockito.mock(AbstractMathFunction.class);
+        AbstractMathFunction log3 = Mockito.mock(AbstractMathFunction.class);
+        AbstractMathFunction log5 = Mockito.mock(AbstractMathFunction.class);
 
         BigDecimal lnVal = ln.calculate(x, EPS);
         BigDecimal log3Val = new BigDecimal("0.6309297535714574");
@@ -172,13 +172,13 @@ public class EquationSystemIntegrationSinLnTest {
         Sin sin = new Sin();
         Ln ln = new Ln();
 
-        MathFunction cos = Mockito.mock(MathFunction.class);
-        MathFunction tan = Mockito.mock(MathFunction.class);
-        MathFunction cot = Mockito.mock(MathFunction.class);
-        MathFunction sec = Mockito.mock(MathFunction.class);
-        MathFunction csc = Mockito.mock(MathFunction.class);
-        MathFunction log3 = Mockito.mock(MathFunction.class);
-        MathFunction log5 = Mockito.mock(MathFunction.class);
+        AbstractMathFunction cos = Mockito.mock(AbstractMathFunction.class);
+        AbstractMathFunction tan = Mockito.mock(AbstractMathFunction.class);
+        AbstractMathFunction cot = Mockito.mock(AbstractMathFunction.class);
+        AbstractMathFunction sec = Mockito.mock(AbstractMathFunction.class);
+        AbstractMathFunction csc = Mockito.mock(AbstractMathFunction.class);
+        AbstractMathFunction log3 = Mockito.mock(AbstractMathFunction.class);
+        AbstractMathFunction log5 = Mockito.mock(AbstractMathFunction.class);
 
         BigDecimal lnVal = ln.calculate(x, EPS);
         BigDecimal log3Val = new BigDecimal("0.9102392266268373");

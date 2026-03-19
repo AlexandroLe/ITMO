@@ -1,5 +1,8 @@
 package ru.itmo.tpo.lab2.util;
 
+import ru.itmo.tpo.lab2.function.AbstractMathFunction;
+
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.math.BigDecimal;
@@ -7,13 +10,22 @@ import java.util.function.Function;
 
 public class CsvWriter {
 
+    private static final String BASE_DIR = "ТПО/Лаб2/code/src/results";
+
     public static void write(String filename,
                              BigDecimal start,
                              BigDecimal end,
                              BigDecimal step,
                              Function<BigDecimal, BigDecimal> func) {
 
-        try (FileWriter writer = new FileWriter(filename)) {
+        File dir = new File(BASE_DIR);
+        if (!dir.exists()) {
+            dir.mkdirs();
+        }
+
+        File file = new File(dir, filename);
+
+        try (FileWriter writer = new FileWriter(file)) {
 
             writer.write("x,result\n");
 
@@ -21,11 +33,26 @@ public class CsvWriter {
                  x.compareTo(end) <= 0;
                  x = x.add(step)) {
 
-                writer.write(x + "," + func.apply(x) + "\n");
+                try {
+                    BigDecimal y = func.apply(x);
+                    writer.write(x + "," + y + "\n");
+                } catch (Exception e) {
+                    writer.write(x + ",\n");
+                }
             }
 
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new RuntimeException("Ошибка при записи CSV файла", e);
         }
+    }
+
+    public static void write(String filename,
+                             BigDecimal start,
+                             BigDecimal end,
+                             BigDecimal step,
+                             AbstractMathFunction func,
+                             BigDecimal eps) {
+
+        write(filename, start, end, step, x -> func.calculate(x, eps));
     }
 }

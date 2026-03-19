@@ -1,5 +1,6 @@
 package ru.itmo.tpo.lab2;
 
+import ru.itmo.tpo.lab2.function.AbstractMathFunction;
 import ru.itmo.tpo.lab2.function.MathFunction;
 
 import java.math.*;
@@ -8,20 +9,20 @@ public class EquationSystem {
 
     private static final MathContext mc = new MathContext(25);
 
-    private final MathFunction sin;
-    private final MathFunction cos;
-    private final MathFunction tan;
-    private final MathFunction cot;
-    private final MathFunction sec;
-    private final MathFunction csc;
+    private final AbstractMathFunction sin;
+    private final AbstractMathFunction cos;
+    private final AbstractMathFunction tan;
+    private final AbstractMathFunction cot;
+    private final AbstractMathFunction sec;
+    private final AbstractMathFunction csc;
 
-    private final MathFunction ln;
-    private final MathFunction log3;
-    private final MathFunction log5;
+    private final AbstractMathFunction ln;
+    private final AbstractMathFunction log3;
+    private final AbstractMathFunction log5;
 
-    public EquationSystem(MathFunction sin, MathFunction cos, MathFunction tan,
-                          MathFunction cot, MathFunction sec, MathFunction csc,
-                          MathFunction ln, MathFunction log3, MathFunction log5) {
+    public EquationSystem(AbstractMathFunction sin, AbstractMathFunction cos, AbstractMathFunction tan,
+                          AbstractMathFunction cot, AbstractMathFunction sec, AbstractMathFunction csc,
+                          AbstractMathFunction ln, AbstractMathFunction log3, AbstractMathFunction log5) {
 
         this.sin = sin;
         this.cos = cos;

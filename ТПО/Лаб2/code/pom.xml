@@ -37,8 +37,22 @@
       <version>5.23.0</version>
       <scope>test</scope>
     </dependency>
-  </dependencies>
-
+    <dependency>
+        <groupId>org.knowm.xchart</groupId>
+        <artifactId>xchart</artifactId>
+        <version>3.8.6</version>
+    </dependency>
+    <dependency>
+        <groupId>org.jfree</groupId>
+        <artifactId>jfreechart</artifactId>
+        <version>1.5.4</version>
+    </dependency>
+    <dependency>
+        <groupId>org.jfree</groupId>
+        <artifactId>jcommon</artifactId>
+        <version>1.0.24</version>
+    </dependency>
+</dependencies>
   <build>
     <plugins>
       <plugin>
@@ -48,4 +62,5 @@
       </plugin>
     </plugins>
   </build>
+
 </project>

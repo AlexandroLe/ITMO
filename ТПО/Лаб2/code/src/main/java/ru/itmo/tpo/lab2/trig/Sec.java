@@ -1,10 +1,11 @@
 package ru.itmo.tpo.lab2.trig;
 
+import ru.itmo.tpo.lab2.function.AbstractMathFunction;
 import ru.itmo.tpo.lab2.function.MathFunction;
 
 import java.math.*;
 
-public class Sec implements MathFunction {
+public class Sec extends AbstractMathFunction {
 
     private final Cos cos;
     private static final MathContext mc = new MathContext(25);
