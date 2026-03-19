@@ -115,14 +115,16 @@ class EquationSystemTest {
     }
 
     @Test
-    void nearZeroPositive() {
-        assertDoesNotThrow(() ->
-                system.calculate(new BigDecimal("0.0001"), EPS));
+    void nearZeroPositiveShouldThrowException() {
+        assertThrows(ArithmeticException.class,
+                () -> system.calculate(new BigDecimal("0.0001"), EPS),
+                "Для значений, близких к нулю, должно выбрасываться исключение");
     }
 
     @Test
-    void largePositive() {
-        assertDoesNotThrow(() ->
-                system.calculate(new BigDecimal("1000"), EPS));
+    void largePositiveShouldThrowException() {
+        assertThrows(ArithmeticException.class,
+                () -> system.calculate(new BigDecimal("1000"), EPS),
+                "Для больших положительных значений должно выбрасываться исключение");
     }
 }
