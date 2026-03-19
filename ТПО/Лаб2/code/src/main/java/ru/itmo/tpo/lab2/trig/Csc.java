@@ -18,7 +18,7 @@ public class Csc implements MathFunction {
         BigDecimal sinVal = sin.calculate(x, eps);
 
         if (sinVal.abs().compareTo(eps) < 0) {
-            return new BigDecimal("1E100");
+            throw new ArithmeticException("csc undefined: sin(x)=0 at x=" + x);
         }
 
         return BigDecimal.ONE.divide(sinVal, mc);

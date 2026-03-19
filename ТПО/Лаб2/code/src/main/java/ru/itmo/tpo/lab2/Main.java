@@ -44,14 +44,6 @@ public class Main {
                 ln, log3, log5
         );
 
-        for (BigDecimal x = new BigDecimal("-2");
-             x.compareTo(new BigDecimal("2")) <= 0;
-             x = x.add(new BigDecimal("0.5"))) {
-
-            System.out.println("x=" + x + " -> " +
-                    system.calculate(x, eps));
-        }
-
         CsvWriter.write(
             "results.csv",
             new BigDecimal("-2"),
