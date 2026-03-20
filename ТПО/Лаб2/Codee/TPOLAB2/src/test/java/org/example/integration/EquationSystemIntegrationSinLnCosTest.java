@@ -1,6 +1,5 @@
 package org.example.integration;
 
-import org.example.log.LogNBase;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.example.EquationSystem;

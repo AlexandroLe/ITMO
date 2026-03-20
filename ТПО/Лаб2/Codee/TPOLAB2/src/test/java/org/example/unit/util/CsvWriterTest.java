@@ -19,7 +19,7 @@ class CsvWriterTest {
     private static final String BASE_DIR = "src/results";
     private static final String FILE_NAME = "test.csv";
 
-    private File file = new File(BASE_DIR, FILE_NAME);
+    private final File file = new File(BASE_DIR, FILE_NAME);
 
     @Test
     void shouldCreateFile() {
