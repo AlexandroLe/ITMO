@@ -48,11 +48,12 @@ public class DataPlotter extends JFrame {
         XYPlot plot = chart.getXYPlot();
         
         NumberAxis xAxis = (NumberAxis) plot.getDomainAxis();
-        xAxis.setRange(-2.1, 2.1);
+        xAxis.setRange(-35.1, 35.1);
         xAxis.setAutoRangeIncludesZero(false);
         
         NumberAxis yAxis = (NumberAxis) plot.getRangeAxis();
         yAxis.setAutoRangeIncludesZero(false);
+        yAxis.setRange(-20.0, 20.0); // Устанавливаем диапазон от -10 до 10
         
         XYLineAndShapeRenderer renderer = new XYLineAndShapeRenderer();
         renderer.setSeriesLinesVisible(0, true);  

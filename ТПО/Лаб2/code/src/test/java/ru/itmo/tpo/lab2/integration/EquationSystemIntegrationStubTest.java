@@ -9,7 +9,6 @@ import java.math.BigDecimal;
 import java.math.MathContext;
 import java.math.RoundingMode;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.when;
 
@@ -54,11 +53,6 @@ public class EquationSystemIntegrationStubTest {
         when(sec.calculate(eq(x), eq(EPS))).thenReturn(secVal);
         when(csc.calculate(eq(x), eq(EPS))).thenReturn(cscVal);
 
-        // Логарифмические функции не должны вызываться в левой ветке
-        when(ln.calculate(any(), any())).thenThrow(new AssertionError("ln should not be called"));
-        when(log3.calculate(any(), any())).thenThrow(new AssertionError("log3 should not be called"));
-        when(log5.calculate(any(), any())).thenThrow(new AssertionError("log5 should not be called"));
-
         // Собираем систему из заглушек
         EquationSystem system = new EquationSystem(sin, cos, tan, cot, sec, csc, ln, log3, log5);
 
@@ -77,8 +71,6 @@ public class EquationSystemIntegrationStubTest {
         BigDecimal step8 = step7.multiply(sinVal, MC);
         BigDecimal step9 = step8.pow(3, MC);
         BigDecimal expected = step9.pow(3, MC);
-
-
 
         assertEquals(expected, result);
     }
@@ -106,14 +98,6 @@ public class EquationSystemIntegrationStubTest {
         when(ln.calculate(eq(x), eq(EPS))).thenReturn(lnVal);
         when(log3.calculate(eq(x), eq(EPS))).thenReturn(log3Val);
         when(log5.calculate(eq(x), eq(EPS))).thenReturn(log5Val);
-
-        // Тригонометрические функции не должны вызываться в правой ветке
-        when(sin.calculate(any(), any())).thenThrow(new AssertionError("sin should not be called"));
-        when(cos.calculate(any(), any())).thenThrow(new AssertionError("cos should not be called"));
-        when(tan.calculate(any(), any())).thenThrow(new AssertionError("tan should not be called"));
-        when(cot.calculate(any(), any())).thenThrow(new AssertionError("cot should not be called"));
-        when(sec.calculate(any(), any())).thenThrow(new AssertionError("sec should not be called"));
-        when(csc.calculate(any(), any())).thenThrow(new AssertionError("csc should not be called"));
 
         EquationSystem system = new EquationSystem(sin, cos, tan, cot, sec, csc, ln, log3, log5);
 

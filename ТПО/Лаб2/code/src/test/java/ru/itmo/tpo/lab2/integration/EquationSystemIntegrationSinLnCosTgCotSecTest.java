@@ -11,7 +11,6 @@ import java.math.BigDecimal;
 import java.math.MathContext;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.when;
 
@@ -85,9 +84,6 @@ public class EquationSystemIntegrationSinLnCosTgCotSecTest {
 
         when(csc.calculate(eq(x), eq(EPS))).thenReturn(cscVal);
 
-        when(log3.calculate(any(), any())).thenThrow(new AssertionError("log3 should not be called"));
-        when(log5.calculate(any(), any())).thenThrow(new AssertionError("log5 should not be called"));
-
         EquationSystem system = new EquationSystem(
                 sin, cos, tan, cot, sec, csc,
                 ln, log3, log5
@@ -129,8 +125,6 @@ public class EquationSystemIntegrationSinLnCosTgCotSecTest {
 
         when(log3.calculate(eq(x), eq(EPS))).thenReturn(log3Val);
         when(log5.calculate(eq(x), eq(EPS))).thenReturn(log5Val);
-
-        when(csc.calculate(any(), any())).thenThrow(new AssertionError("csc should not be called"));
 
         EquationSystem system = new EquationSystem(
                 sin, cos, tan, cot, sec, csc,

@@ -33,9 +33,9 @@ public class Main {
 
         CsvWriter.write(
             filename,
-            new BigDecimal("-2"),
-            new BigDecimal("2"),
-            new BigDecimal("0.1"),
+            new BigDecimal("-35"),
+            new BigDecimal("35"),
+            new BigDecimal("0.001"),
             x -> system.calculate(x, eps)
         );
     }
