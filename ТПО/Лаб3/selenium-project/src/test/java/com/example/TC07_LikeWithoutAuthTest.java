@@ -28,8 +28,15 @@ public class TC07_LikeWithoutAuthTest {
     public void testLikeWithoutAuth() {
         driver.get("https://pikabu.ru/");
 
+        WebElement ratingBlock = wait.until(ExpectedConditions.visibilityOfElementLocated(
+                By.xpath("//div[contains(@aria-label,'плюсов')]")
+        ));
+
+        String likesText = ratingBlock.getAttribute("aria-label");
+        System.out.println("Likes block: " + likesText);
+
         WebElement addIconButton = wait.until(ExpectedConditions.elementToBeClickable(
-                By.xpath("//article//div//div//div//div//button")
+                By.xpath("//button[contains(@class,'story__rating-up')]")
         ));
         addIconButton.click();
 

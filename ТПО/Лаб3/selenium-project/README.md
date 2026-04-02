@@ -14,8 +14,18 @@ mvn test -Dtest=TC05_OpenPostTest -Dbrowser=firefox
 ```
 
 ```
+mvn test -Dtest=TC06_LikeWithAuthTest -Dbrowser=chrome
+mvn test -Dtest=TC06_LikeWithAuthTest -Dbrowser=firefox
+```
+
+```
 mvn test -Dtest=TC07_LikeWithoutAuthTest -Dbrowser=chrome
 mvn test -Dtest=TC07_LikeWithoutAuthTest -Dbrowser=firefox
+```
+
+```
+mvn test -Dtest=TC08_DisLikeWithAuthTest -Dbrowser=chrome
+mvn test -Dtest=TC08_DisLikeWithAuthTest -Dbrowser=firefox
 ```
 
 ```
