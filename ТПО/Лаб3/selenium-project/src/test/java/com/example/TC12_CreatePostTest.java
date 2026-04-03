@@ -47,10 +47,11 @@ public class TC12_CreatePostTest {
         ));
         titleInput.sendKeys("Мой первый автотест");
 
-        WebElement bodyInput = wait.until(ExpectedConditions.visibilityOfElementLocated(
-                By.xpath("//p[@class='node-paragraph-view__content--hRxcjf1f']")
+        WebElement bodyInput = wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//div[contains(@class,'story-editor-view__content')]")
         ));
-        bodyInput.sendKeys("Привет, это тестовый пост.");
+        bodyInput.click();
+        driver.switchTo().activeElement().sendKeys("Привет, это тестовый пост.");
 
         WebElement tagsInput = driver.findElement(
                 By.xpath("//input[@class='pkb-input-tag__input--U63z_jON']")

@@ -15,7 +15,7 @@ public class TC08_AddCommentTest {
 
     @BeforeEach
     public void setUp() {
-        String browser = System.getProperty("browser", "chrome");
+        String browser = System.getProperty("browser", "firefox");
         if (browser.equalsIgnoreCase("firefox")) {
             FirefoxProfile profile = new FirefoxProfile(
                     new java.io.File("C:/Users/AsusAspire 3/AppData/Roaming/Mozilla/Firefox/Profiles/bpa8o2jm.TestTPO3")
@@ -51,14 +51,14 @@ public class TC08_AddCommentTest {
 
         ((JavascriptExecutor) driver).executeScript("window.scrollTo(0, document.body.scrollHeight);");
 
-        WebElement commentInput = wait.until(ExpectedConditions.visibilityOfElementLocated(
-                By.xpath("//div[@editor='[object Object]']//p")
+        WebElement commentInput = wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//div[contains(@class,'comment')]//div[@contenteditable='true']")
         ));
         commentInput.click();
-        commentInput.sendKeys("Test: successful submission.");
+        driver.switchTo().activeElement().sendKeys("Test: successful submission.");
 
         WebElement submitButton = wait.until(ExpectedConditions.elementToBeClickable(
-                By.xpath("//span[@class='pkb-btn__text--FO_UA9yM']")
+                By.xpath("//button[.//span[normalize-space()='Отправить']]")
         ));
         submitButton.click();
 
