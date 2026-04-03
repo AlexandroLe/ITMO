@@ -47,12 +47,12 @@ public class TC13_CreateEmptyTitlePostTest {
         bodyInput.sendKeys("Привет, это тестовый пост.");
 
         WebElement submitButton = driver.findElement(
-                By.xpath("//button[contains(@class,'pkb-btn__host_wide')]//span[@class='pkb-btn__text--FO_UA9yM']")
+                By.xpath("//button[@class='pkb-btn__host--n2MGeea1 pkb-btn__host_wide--pv56KZ78']\n")
         );
         submitButton.click();
 
         WebElement validation = wait.until(ExpectedConditions.visibilityOfElementLocated(
-                By.xpath("//div[@class='toast__content']")
+                By.xpath("//div[@class='toast toast_danger']")
         ));
 
         System.out.println("Validation message: " + validation.getText());
