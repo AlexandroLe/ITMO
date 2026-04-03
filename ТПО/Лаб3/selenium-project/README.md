@@ -19,13 +19,18 @@ mvn test -Dtest=TC06_LikeWithAuthTest -Dbrowser=firefox
 ```
 
 ```
+mvn test -Dtest=TC06a_DisLikeWithAuthTest -Dbrowser=chrome
+mvn test -Dtest=TC06a_DisLikeWithAuthTest -Dbrowser=firefox
+```
+
+```
 mvn test -Dtest=TC07_LikeWithoutAuthTest -Dbrowser=chrome
 mvn test -Dtest=TC07_LikeWithoutAuthTest -Dbrowser=firefox
 ```
 
 ```
-mvn test -Dtest=TC08_DisLikeWithAuthTest -Dbrowser=chrome
-mvn test -Dtest=TC08_DisLikeWithAuthTest -Dbrowser=firefox
+mvn test -Dtest=TC08_AddCommentTest -Dbrowser=chrome
+mvn test -Dtest=TC08_AddCommentTest -Dbrowser=firefox
 ```
 
 ```
@@ -41,6 +46,16 @@ mvn test -Dtest=TC10_SearchExistingContentTest -Dbrowser=firefox
 ```
 mvn test -Dtest=TC11_SearchInvalidContentTest -Dbrowser=chrome
 mvn test -Dtest=TC11_SearchInvalidContentTest -Dbrowser=firefox
+```
+
+```
+mvn test -Dtest=TC12_CreatePostTest -Dbrowser=chrome
+mvn test -Dtest=TC12_CreatePostTest -Dbrowser=firefox
+```
+
+```
+mvn test -Dtest=TC13_CreateEmptyTitlePostTest -Dbrowser=chrome
+mvn test -Dtest=TC13_CreateEmptyTitlePostTest -Dbrowser=firefox
 ```
 
 ```
