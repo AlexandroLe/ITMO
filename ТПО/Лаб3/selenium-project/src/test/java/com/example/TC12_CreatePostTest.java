@@ -45,7 +45,7 @@ public class TC12_CreatePostTest {
         WebElement titleInput = wait.until(ExpectedConditions.visibilityOfElementLocated(
                 By.xpath("//textarea[@placeholder='Заголовок']")
         ));
-        titleInput.sendKeys("Мой первый автотест.");
+        titleInput.sendKeys("Мой первый автотест");
 
         WebElement bodyInput = wait.until(ExpectedConditions.visibilityOfElementLocated(
                 By.xpath("//p[@class='node-paragraph-view__content--hRxcjf1f']")
@@ -53,10 +53,10 @@ public class TC12_CreatePostTest {
         bodyInput.sendKeys("Привет, это тестовый пост.");
 
         WebElement tagsInput = driver.findElement(
-                By.xpath("//div[@class='pkb-input-tag__wrapper--ghs3cfqt']")
+                By.xpath("//input[@class='pkb-input-tag__input--U63z_jON']")
         );
         tagsInput.click();
-        tagsInput.sendKeys("тест, тесты");
+        tagsInput.sendKeys("тест, тесто,");
         tagsInput.sendKeys(Keys.ENTER);
 
         List<WebElement> recommendedTags = driver.findElements(
@@ -69,7 +69,7 @@ public class TC12_CreatePostTest {
         }
 
         WebElement submitButton = driver.findElement(
-                By.xpath("//button[contains(@class,'pkb-btn__host_wide')]//span[@class='pkb-btn__text--FO_UA9yM']")
+                By.xpath("//button[@class='pkb-btn__host--n2MGeea1 pkb-btn__host_wide--pv56KZ78']\n")
         );
         submitButton.click();
 
@@ -83,7 +83,7 @@ public class TC12_CreatePostTest {
 
         System.out.println("Post created: " + postTitle.getText());
 
-        Assertions.assertEquals("Мой первый автотест.", postTitle.getText());
+        Assertions.assertEquals("Мой первый автотест", postTitle.getText());
         Assertions.assertTrue(postBody.isDisplayed());
     }
 
