@@ -24,7 +24,7 @@ public class TC06_LikeWithAuthTest {
             );
             FirefoxOptions options = new FirefoxOptions();
             options.setProfile(profile);
-            driver = new FirefoxDriver();
+            driver = new FirefoxDriver(options);
         } else {
             ChromeOptions options = new ChromeOptions();
             options.addArguments("user-data-dir=C:/Users/AsusAspire 3/AppData/Local/Google/Chrome/User Data/Profile 4");

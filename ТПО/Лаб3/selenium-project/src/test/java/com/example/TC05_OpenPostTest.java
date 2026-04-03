@@ -67,6 +67,7 @@ public class TC05_OpenPostTest {
 
         Assertions.assertFalse(titlePageText.isEmpty(), "Title is empty");
         Assertions.assertTrue(hasText || hasImage, "Post has no content");
+        Assertions.assertTrue(driver.getCurrentUrl().contains("/story/"));
     }
 
     @AfterEach

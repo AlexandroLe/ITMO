@@ -11,7 +11,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
-public class TC08_DisLikeWithAuthTest {
+public class TC06a_DisLikeWithAuthTest {
     private WebDriver driver;
     private WebDriverWait wait;
 
@@ -24,7 +24,7 @@ public class TC08_DisLikeWithAuthTest {
             );
             FirefoxOptions options = new FirefoxOptions();
             options.setProfile(profile);
-            driver = new FirefoxDriver();
+            driver = new FirefoxDriver(options);
         } else {
             ChromeOptions options = new ChromeOptions();
             options.addArguments("user-data-dir=C:/Users/AsusAspire 3/AppData/Local/Google/Chrome/User Data/Profile 4");
