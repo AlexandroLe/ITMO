@@ -34,12 +34,12 @@ public class TC15_RegisterExistingLoginTest {
         signupButton.click();
 
         WebElement loginInput = wait.until(ExpectedConditions.visibilityOfElementLocated(
-                By.xpath("//input[@placeholder='Никнейм на Пикабу *']")
+                By.xpath("//input[contains(@placeholder, 'Никнейм на Пикабу *')]")
         ));
         loginInput.sendKeys("alexandroesiano");
 
         WebElement submitButton = driver.findElement(
-                By.xpath("//div[@class='app']")
+                By.xpath("//span[contains(text(),'Создать аккаунт')]")
         );
         submitButton.click();
 

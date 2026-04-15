@@ -10,6 +10,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -51,21 +52,33 @@ public class TC08_AddCommentTest {
                 By.xpath("//div[contains(@class,'comment')]//div[@contenteditable='true']")
         ));
         commentInput.click();
-        driver.switchTo().activeElement().sendKeys("Test: successful submission.");
+        driver.switchTo().activeElement().sendKeys("Ну, не знаю, не знаю.");
 
         WebElement submitButton = wait.until(ExpectedConditions.elementToBeClickable(
-                By.xpath("//button[.//span[normalize-space()='Отправить']]")
+                By.xpath("//button[.//span[contains(normalize-space(), 'Отправить')]]")
         ));
         submitButton.click();
 
         WebElement commentText = wait.until(ExpectedConditions.visibilityOfElementLocated(
-                By.xpath("//p[contains(text(),'Test')]")
+                By.xpath("//p[contains(text(),'Ну, не знаю, не знаю')]")
         ));
 
         System.out.println("Comment found: " + commentText.getText());
 
         Assertions.assertTrue(commentText.isDisplayed(), "Comment was not added");
 
+        WebElement commentOur = wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//div[contains(@class,'comment')]//div[contains(@data-author-id, '11692895')]")
+        ));
+
+        Actions actions = new Actions(driver);
+        actions.moveToElement(commentOur).perform();
+        System.out.println("создал");
+
+        WebElement removeButton = wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//button[@data-test='comment-remove']")
+        ));
+        removeButton.click();
     }
 
     @AfterEach

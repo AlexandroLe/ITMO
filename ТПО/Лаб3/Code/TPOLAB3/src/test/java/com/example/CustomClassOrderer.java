@@ -8,25 +8,26 @@ import java.util.*;
 
 public class CustomClassOrderer implements ClassOrderer {
     private static final List<String> CLASS_ORDER = Arrays.asList(
-            "TC09_CommentWithoutAuthTest",
-            "TC10_SearchExistingContentTest",
-            "TC11_SearchInvalidContentTest",
-            "TC01_LoginTest",
             "TC02_LoginInvalidPasswordTest",
             "TCO3_EmptyLoginFieldsTest",
             "TC04_FeedPostsTest",
             "TC05_OpenPostTest",
-            "TC03_EmptyLoginFieldsTest",
-            "TC06_LikeWithAuthTest",
-            "TC06a_DisLikeWithAuthTest",
             "TC07_LikeWithoutAuthTest",
-            "TC08_AddCommentTest",
-            "TC12_CreatePostTest",
-            "TC13_CreateEmptyTitlePostTest",
+            "TC09_CommentWithoutAuthTest",
+            "TC10_SearchExistingContentTest",
+            "TC11_SearchInvalidContentTest",
             "TC15_RegisterExistingLoginTest",
             "TC16_RegisterInvalidEmailTest",
-            "TC17_RegisterExistingEmailTest",
-            "TC18_RegisterEmptyTest"
+            "TC17_RegisterEmptyTest",
+            "TC18_RegisterExistingEmailTest",
+
+            "TC01_LoginTest",
+
+            "TC06_LikeWithAuthTest",
+            "TC06a_DisLikeWithAuthTest",
+            "TC08_AddCommentTest",
+            "TC12_CreatePostTest",
+            "TC13_CreateEmptyTitlePostTest"
     );
 
     @Override

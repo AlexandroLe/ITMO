@@ -34,7 +34,7 @@ public class TC11_SearchInvalidContentTest {
         searchButton.click();
 
         WebElement searchInput = wait.until(ExpectedConditions.visibilityOfElementLocated(
-                By.xpath("//input[@placeholder='Искать на Пикабу']")
+                By.xpath("//input[contains(@placeholder, 'Искать на Пикабу')]")
         ));
         searchInput.sendKeys("qwiuyrqwknfkdsbvlwkfp;oskjclhzlxkcj;welkjckjzdbdhkjfhaklsdf");
 

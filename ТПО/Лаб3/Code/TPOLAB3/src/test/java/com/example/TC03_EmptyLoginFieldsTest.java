@@ -31,10 +31,10 @@ public class TC03_EmptyLoginFieldsTest {
 
 
         WebElement loginInput = wait.until(ExpectedConditions.presenceOfElementLocated(
-                By.xpath("//input[@placeholder='Логин']")
+                By.xpath("//input[contains(@placeholder, 'Логин')]")
         ));
         WebElement passwordInput = wait.until(ExpectedConditions.presenceOfElementLocated(
-                By.xpath("//input[@placeholder='Пароль']")
+                By.xpath("//input[contains(@placeholder, 'Пароль')]")
         ));
 
         loginInput.clear();

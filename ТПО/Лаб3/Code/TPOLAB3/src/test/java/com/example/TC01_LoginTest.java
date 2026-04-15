@@ -1,5 +1,6 @@
 package com.example;
 
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
@@ -26,15 +27,15 @@ public class TC01_LoginTest {
     }
 
     @Test
-    public void testEmptyLoginFields() {
+    public void testLogin() {
         driver.get("https://pikabu.ru/");
 
 
         WebElement loginInput = wait.until(ExpectedConditions.presenceOfElementLocated(
-                By.xpath("//input[@placeholder='Логин']")
+                By.xpath("//input[contains(@placeholder, 'Логин')]")
         ));
         WebElement passwordInput = wait.until(ExpectedConditions.presenceOfElementLocated(
-                By.xpath("//input[@placeholder='Пароль']")
+                By.xpath("//input[contains(@placeholder, 'Пароль')]")
         ));
         loginInput.click();
         loginInput.sendKeys("antero3112");
@@ -54,10 +55,10 @@ public class TC01_LoginTest {
         System.out.println("Success login: " + userName.getText());
     }
 
-//    @AfterEach
-//    public void tearDown() {
-//        if (driver != null) {
-//            driver.quit();
-//        }
-//    }
+    @AfterEach
+    public void tearDown() {
+        if (driver != null) {
+            driver.quit();
+        }
+    }
 }

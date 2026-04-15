@@ -1,5 +1,6 @@
 package com.example;
 
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -39,7 +40,7 @@ public class TC13_CreateEmptyTitlePostTest {
                 By.xpath("//div[contains(@class,'story-editor-view__content')]")
         ));
         bodyInput.click();
-        driver.switchTo().activeElement().sendKeys("Привет, это тестовый пост.");
+        driver.switchTo().activeElement().sendKeys("TESTTESTTESTTEST.");
 
         WebElement submitButton = driver.findElement(
                 By.xpath("//button[@class='pkb-btn__host--n2MGeea1 pkb-btn__host_wide--pv56KZ78']\n")
@@ -55,10 +56,10 @@ public class TC13_CreateEmptyTitlePostTest {
         Assertions.assertTrue(validation.getText().contains("Укажите заголовок"));
     }
 
-//    @AfterEach
-//    public void tearDown() {
-//        if (driver != null) {
-//            driver.quit();
-//        }
-//    }
+    @AfterEach
+    public void tearDown() {
+        if (driver != null) {
+            driver.quit();
+        }
+    }
 }

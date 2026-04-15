@@ -34,7 +34,7 @@ public class TC10_SearchExistingContentTest {
         searchButton.click();
 
         WebElement searchInput = wait.until(ExpectedConditions.visibilityOfElementLocated(
-                By.xpath("//input[@placeholder='Искать на Пикабу']")
+                By.xpath("//input[contains(@placeholder, 'Искать на Пикабу')]")
         ));
         searchInput.sendKeys("Расизм в программировании");
 

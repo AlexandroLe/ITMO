@@ -34,12 +34,12 @@ public class TC16_RegisterInvalidEmailTest {
         signupButton.click();
 
         WebElement emailInput = wait.until(ExpectedConditions.visibilityOfElementLocated(
-                By.xpath("//input[@placeholder='E-mail']")
+                By.xpath("//input[contains(@placeholder, 'E-mail')]")
         ));
         emailInput.sendKeys("alexandroesiano@mail");
 
         WebElement submitButton = driver.findElement(
-                By.xpath("//div[@class='app']")
+                By.xpath("//span[contains(text(),'Создать аккаунт')]")
         );
         submitButton.click();
 

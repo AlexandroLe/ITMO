@@ -33,10 +33,10 @@ public class TC02_LoginInvalidPasswordTest {
         driver.get("https://pikabu.ru/");
 
         WebElement loginInput = wait.until(ExpectedConditions.presenceOfElementLocated(
-                By.xpath("//input[@placeholder='Логин']")
+                By.xpath("//input[contains(@placeholder, 'Логин')]")
         ));
         WebElement passwordInput = wait.until(ExpectedConditions.presenceOfElementLocated(
-                By.xpath("//input[@placeholder='Пароль']")
+                By.xpath("//input[contains(@placeholder, 'Пароль')]")
         ));
         loginInput.click();
         loginInput.sendKeys("antero3112");

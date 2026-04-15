@@ -13,7 +13,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class TC18_RegisterEmptyTest {
+public class TC18_RegisterExistingEmailTest {
     private WebDriver driver;
     private WebDriverWait wait;
 
@@ -34,33 +34,22 @@ public class TC18_RegisterEmptyTest {
         signupButton.click();
 
         WebElement emailInput = wait.until(ExpectedConditions.visibilityOfElementLocated(
-                By.xpath("//input[@placeholder='E-mail']")
+                By.xpath("//input[contains(@placeholder, 'E-mail')]")
         ));
-
-        WebElement loginInput = wait.until(ExpectedConditions.visibilityOfElementLocated(
-                By.xpath("//input[@placeholder='Никнейм на Пикабу *']")
-        ));
-
-        WebElement passwordInput = wait.until(ExpectedConditions.visibilityOfElementLocated(
-                By.xpath("//input[@placeholder='Пароль *']")
-        ));
-
-        emailInput.clear();
-        loginInput.clear();
-        passwordInput.clear();
+        emailInput.sendKeys("alexandroesiano@mail.ru");
 
         WebElement submitButton = driver.findElement(
-                By.xpath("//div[@class='tabs__tab auth tabs__tab_visible']//button[@type='submit']")
+                By.xpath("//span[contains(text(),'Создать аккаунт')]")
         );
         submitButton.click();
 
         WebElement validationMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(
-                By.xpath("//span[contains(text(),'Обязательное поле')]")
+                By.xpath("//span[contains(text(),'Email занят')]")
         ));
 
         System.out.println("Validation message displayed: " + validationMessage.getText());
 
-        Assertions.assertEquals("Обязательное поле", validationMessage.getText());
+        Assertions.assertEquals("Email занят", validationMessage.getText());
     }
 
     @AfterEach
