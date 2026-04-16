@@ -73,12 +73,13 @@ public class TC08_AddCommentTest {
 
         Actions actions = new Actions(driver);
         actions.moveToElement(commentOur).perform();
-        System.out.println("создал");
+        System.out.println("Создал");
 
         WebElement removeButton = wait.until(ExpectedConditions.elementToBeClickable(
                 By.xpath("//button[@data-test='comment-remove']")
         ));
         removeButton.click();
+        System.out.println("Удалил коммент");
     }
 
     @AfterEach

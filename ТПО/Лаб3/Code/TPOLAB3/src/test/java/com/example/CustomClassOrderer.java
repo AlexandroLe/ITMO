@@ -9,7 +9,7 @@ import java.util.*;
 public class CustomClassOrderer implements ClassOrderer {
     private static final List<String> CLASS_ORDER = Arrays.asList(
             "TC02_LoginInvalidPasswordTest",
-            "TCO3_EmptyLoginFieldsTest",
+            "TC03_EmptyLoginFieldsTest",
             "TC04_FeedPostsTest",
             "TC05_OpenPostTest",
             "TC07_LikeWithoutAuthTest",
@@ -20,13 +20,10 @@ public class CustomClassOrderer implements ClassOrderer {
             "TC16_RegisterInvalidEmailTest",
             "TC17_RegisterEmptyTest",
             "TC18_RegisterExistingEmailTest",
-
             "TC01_LoginTest",
-
+            "TC06a_LikeAndRemoveLikeTest",
             "TC06_LikeWithAuthTest",
-            "TC06a_DisLikeWithAuthTest",
             "TC08_AddCommentTest",
-            "TC12_CreatePostTest",
             "TC13_CreateEmptyTitlePostTest"
     );
 

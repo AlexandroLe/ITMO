@@ -1,9 +1,6 @@
 package com.example;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -18,7 +15,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 import java.util.List;
-
+@Disabled("Лимиты(((((")
 public class TC12_CreatePostTest {
     private WebDriver driver;
     private WebDriverWait wait;
@@ -44,19 +41,19 @@ public class TC12_CreatePostTest {
         WebElement titleInput = wait.until(ExpectedConditions.visibilityOfElementLocated(
                 By.xpath("//textarea[@placeholder='Заголовок']")
         ));
-        titleInput.sendKeys("Мой первый автотест");
+        titleInput.sendKeys("Важный вопрос");
 
         WebElement bodyInput = wait.until(ExpectedConditions.elementToBeClickable(
                 By.xpath("//div[contains(@class,'story-editor-view__content')]")
         ));
         bodyInput.click();
-        driver.switchTo().activeElement().sendKeys("Привет, это тестовый пост.");
+        driver.switchTo().activeElement().sendKeys("Привет! Как вы считаете, какой самый нужный и полезный пост на сайте?");
 
         WebElement tagsInput = driver.findElement(
                 By.xpath("//input[@class='pkb-input-tag__input--U63z_jON']")
         );
         tagsInput.click();
-        tagsInput.sendKeys("тест, тесто,");
+        tagsInput.sendKeys("вопрос, Обсуждение,");
         tagsInput.sendKeys(Keys.ENTER);
 
         List<WebElement> recommendedTags = driver.findElements(

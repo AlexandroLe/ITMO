@@ -14,7 +14,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class TC06a_DisLikeWithAuthTest {
+public class TC06a_LikeAndRemoveLikeTest {
     private WebDriver driver;
     private WebDriverWait wait;
 
