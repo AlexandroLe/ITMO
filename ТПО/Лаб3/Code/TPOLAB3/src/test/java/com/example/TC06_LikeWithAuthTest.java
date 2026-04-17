@@ -32,7 +32,7 @@ public class TC06_LikeWithAuthTest {
         driver.get("https://pikabu.ru/");
 
         WebElement ratingBlock = wait.until(ExpectedConditions.visibilityOfElementLocated(
-                By.xpath("//div[contains(@aria-label,'плюс')]")
+                By.xpath("//div[contains(@aria-label,'минус')]")
         ));
 
         String beforeText = ratingBlock.getAttribute("aria-label");

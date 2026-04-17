@@ -32,7 +32,7 @@ public class TC06a_LikeAndRemoveLikeTest {
         driver.get("https://pikabu.ru/");
 
         WebElement ratingBlock = wait.until(ExpectedConditions.visibilityOfElementLocated(
-                By.xpath("//div[contains(@aria-label,'плюс')]")
+                By.xpath("//div[contains(@aria-label,'минус')]")
         ));
 
         String initialText = ratingBlock.getAttribute("aria-label");
