@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1250" height="760" viewBox="0 0 1250 760">
+<rect width="100%" height="100%" fill="white"/>
+<text x="625.0" y="35" text-anchor="middle" font-family="Arial" font-size="22" font-weight="700">Convergence of Monte Carlo Integral Estimates</text>
+<line x1="90" y1="670" x2="890" y2="670" stroke="#222"/>
+<line x1="90" y1="70" x2="90" y2="670" stroke="#222"/>
+<line x1="90.00" y1="70" x2="90.00" y2="670" stroke="#e5e7eb"/>
+<text x="90.00" y="698" text-anchor="middle" font-family="Arial" font-size="13">100</text>
+<line x1="356.67" y1="70" x2="356.67" y2="670" stroke="#e5e7eb"/>
+<text x="356.67" y="698" text-anchor="middle" font-family="Arial" font-size="13">1000</text>
+<line x1="623.33" y1="70" x2="623.33" y2="670" stroke="#e5e7eb"/>
+<text x="623.33" y="698" text-anchor="middle" font-family="Arial" font-size="13">10000</text>
+<line x1="890.00" y1="70" x2="890.00" y2="670" stroke="#e5e7eb"/>
+<text x="890.00" y="698" text-anchor="middle" font-family="Arial" font-size="13">100000</text>
+<line x1="90" y1="670.00" x2="890" y2="670.00" stroke="#e5e7eb"/>
+<text x="78" y="674.00" text-anchor="end" font-family="Arial" font-size="12">36.378</text>
+<line x1="90" y1="550.00" x2="890" y2="550.00" stroke="#e5e7eb"/>
+<text x="78" y="554.00" text-anchor="end" font-family="Arial" font-size="12">37.287</text>
+<line x1="90" y1="430.00" x2="890" y2="430.00" stroke="#e5e7eb"/>
+<text x="78" y="434.00" text-anchor="end" font-family="Arial" font-size="12">38.195</text>
+<line x1="90" y1="310.00" x2="890" y2="310.00" stroke="#e5e7eb"/>
+<text x="78" y="314.00" text-anchor="end" font-family="Arial" font-size="12">39.103</text>
+<line x1="90" y1="190.00" x2="890" y2="190.00" stroke="#e5e7eb"/>
+<text x="78" y="194.00" text-anchor="end" font-family="Arial" font-size="12">40.011</text>
+<line x1="90" y1="70.00" x2="890" y2="70.00" stroke="#e5e7eb"/>
+<text x="78" y="74.00" text-anchor="end" font-family="Arial" font-size="12">40.919</text>
+<text x="490.0" y="732" text-anchor="middle" font-family="Arial" font-size="15">Sample size N</text>
+<text x="24" y="370.0" text-anchor="middle" font-family="Arial" font-size="15" transform="rotate(-90 24 370.0)">Integral estimate</text>
+<line x1="90" y1="323.59" x2="890" y2="323.59" stroke="#000" stroke-width="2" stroke-dasharray="8 6"/>
+<polyline fill="none" stroke="#1f77b4" stroke-width="2.2" points="90.00,482.10 356.67,261.85 623.33,351.22 890.00,306.81"/>
+<circle cx="90.00" cy="482.10" r="3.5" fill="#1f77b4"/>
+<circle cx="356.67" cy="261.85" r="3.5" fill="#1f77b4"/>
+<circle cx="623.33" cy="351.22" r="3.5" fill="#1f77b4"/>
+<circle cx="890.00" cy="306.81" r="3.5" fill="#1f77b4"/>
+<polyline fill="none" stroke="#ff7f0e" stroke-width="2.2" points="90.00,359.49 356.67,322.44 623.33,328.50 890.00,325.85"/>
+<circle cx="90.00" cy="359.49" r="3.5" fill="#ff7f0e"/>
+<circle cx="356.67" cy="322.44" r="3.5" fill="#ff7f0e"/>
+<circle cx="623.33" cy="328.50" r="3.5" fill="#ff7f0e"/>
+<circle cx="890.00" cy="325.85" r="3.5" fill="#ff7f0e"/>
+<polyline fill="none" stroke="#2ca02c" stroke-width="2.2" points="90.00,320.37 356.67,334.46 623.33,322.73 890.00,322.19"/>
+<circle cx="90.00" cy="320.37" r="3.5" fill="#2ca02c"/>
+<circle cx="356.67" cy="334.46" r="3.5" fill="#2ca02c"/>
+<circle cx="623.33" cy="322.73" r="3.5" fill="#2ca02c"/>
+<circle cx="890.00" cy="322.19" r="3.5" fill="#2ca02c"/>
+<polyline fill="none" stroke="#d62728" stroke-width="2.2" points="90.00,173.79 356.67,336.69 623.33,326.04 890.00,323.11"/>
+<circle cx="90.00" cy="173.79" r="3.5" fill="#d62728"/>
+<circle cx="356.67" cy="336.69" r="3.5" fill="#d62728"/>
+<circle cx="623.33" cy="326.04" r="3.5" fill="#d62728"/>
+<circle cx="890.00" cy="323.11" r="3.5" fill="#d62728"/>
+<polyline fill="none" stroke="#9467bd" stroke-width="2.2" points="90.00,323.59 356.67,323.59 623.33,323.59 890.00,323.59"/>
+<circle cx="90.00" cy="323.59" r="3.5" fill="#9467bd"/>
+<circle cx="356.67" cy="323.59" r="3.5" fill="#9467bd"/>
+<circle cx="623.33" cy="323.59" r="3.5" fill="#9467bd"/>
+<circle cx="890.00" cy="323.59" r="3.5" fill="#9467bd"/>
+<polyline fill="none" stroke="#8c564b" stroke-width="2.2" points="90.00,272.99 356.67,326.77 623.33,311.58 890.00,322.42"/>
+<circle cx="90.00" cy="272.99" r="3.5" fill="#8c564b"/>
+<circle cx="356.67" cy="326.77" r="3.5" fill="#8c564b"/>
+<circle cx="623.33" cy="311.58" r="3.5" fill="#8c564b"/>
+<circle cx="890.00" cy="322.42" r="3.5" fill="#8c564b"/>
+<polyline fill="none" stroke="#e377c2" stroke-width="2.2" points="90.00,313.02 356.67,324.98 623.33,322.69 890.00,323.65"/>
+<circle cx="90.00" cy="313.02" r="3.5" fill="#e377c2"/>
+<circle cx="356.67" cy="324.98" r="3.5" fill="#e377c2"/>
+<circle cx="623.33" cy="322.69" r="3.5" fill="#e377c2"/>
+<circle cx="890.00" cy="323.65" r="3.5" fill="#e377c2"/>
+<polyline fill="none" stroke="#7f7f7f" stroke-width="2.2" points="90.00,185.30 356.67,325.59 623.33,302.89 890.00,321.39"/>
+<circle cx="90.00" cy="185.30" r="3.5" fill="#7f7f7f"/>
+<circle cx="356.67" cy="325.59" r="3.5" fill="#7f7f7f"/>
+<circle cx="623.33" cy="302.89" r="3.5" fill="#7f7f7f"/>
+<circle cx="890.00" cy="321.39" r="3.5" fill="#7f7f7f"/>
+<polyline fill="none" stroke="#bcbd22" stroke-width="2.2" points="90.00,628.62 356.67,304.30 623.33,283.33 890.00,333.32"/>
+<circle cx="90.00" cy="628.62" r="3.5" fill="#bcbd22"/>
+<circle cx="356.67" cy="304.30" r="3.5" fill="#bcbd22"/>
+<circle cx="623.33" cy="283.33" r="3.5" fill="#bcbd22"/>
+<circle cx="890.00" cy="333.32" r="3.5" fill="#bcbd22"/>
+<polyline fill="none" stroke="#17becf" stroke-width="2.2" points="90.00,123.52 356.67,212.91 623.33,359.98 890.00,314.94"/>
+<circle cx="90.00" cy="123.52" r="3.5" fill="#17becf"/>
+<circle cx="356.67" cy="212.91" r="3.5" fill="#17becf"/>
+<circle cx="623.33" cy="359.98" r="3.5" fill="#17becf"/>
+<circle cx="890.00" cy="314.94" r="3.5" fill="#17becf"/>
+<polyline fill="none" stroke="#111827" stroke-width="2.2" points="90.00,111.38 356.67,203.08 623.33,313.02 890.00,330.87"/>
+<circle cx="90.00" cy="111.38" r="3.5" fill="#111827"/>
+<circle cx="356.67" cy="203.08" r="3.5" fill="#111827"/>
+<circle cx="623.33" cy="313.02" r="3.5" fill="#111827"/>
+<circle cx="890.00" cy="330.87" r="3.5" fill="#111827"/>
+<line x1="920" y1="82" x2="948" y2="82" stroke="#000" stroke-width="2" stroke-dasharray="8 6"/>
+<text x="958" y="86" font-family="Arial" font-size="12">True integral</text>
+<line x1="920" y1="106" x2="948" y2="106" stroke="#1f77b4" stroke-width="2.2"/>
+<text x="958" y="110" font-family="Arial" font-size="12">Simple MC</text>
+<line x1="920" y1="130" x2="948" y2="130" stroke="#ff7f0e" stroke-width="2.2"/>
+<text x="958" y="134" font-family="Arial" font-size="12">Stratified MC, step=1</text>
+<line x1="920" y1="154" x2="948" y2="154" stroke="#2ca02c" stroke-width="2.2"/>
+<text x="958" y="158" font-family="Arial" font-size="12">Stratified MC, step=0.5</text>
+<line x1="920" y1="178" x2="948" y2="178" stroke="#d62728" stroke-width="2.2"/>
+<text x="958" y="182" font-family="Arial" font-size="12">Importance sampling, p~x^1</text>
+<line x1="920" y1="202" x2="948" y2="202" stroke="#9467bd" stroke-width="2.2"/>
+<text x="958" y="206" font-family="Arial" font-size="12">Importance sampling, p~x^2</text>
+<line x1="920" y1="226" x2="948" y2="226" stroke="#8c564b" stroke-width="2.2"/>
+<text x="958" y="230" font-family="Arial" font-size="12">Importance sampling, p~x^3</text>
+<line x1="920" y1="250" x2="948" y2="250" stroke="#e377c2" stroke-width="2.2"/>
+<text x="958" y="254" font-family="Arial" font-size="12">Multiple IS, balance weights</text>
+<line x1="920" y1="274" x2="948" y2="274" stroke="#7f7f7f" stroke-width="2.2"/>
+<text x="958" y="278" font-family="Arial" font-size="12">Multiple IS, squared weights</text>
+<line x1="920" y1="298" x2="948" y2="298" stroke="#bcbd22" stroke-width="2.2"/>
+<text x="958" y="302" font-family="Arial" font-size="12">Russian roulette, R=0.5</text>
+<line x1="920" y1="322" x2="948" y2="322" stroke="#17becf" stroke-width="2.2"/>
+<text x="958" y="326" font-family="Arial" font-size="12">Russian roulette, R=0.75</text>
+<line x1="920" y1="346" x2="948" y2="346" stroke="#111827" stroke-width="2.2"/>
+<text x="958" y="350" font-family="Arial" font-size="12">Russian roulette, R=0.95</text>
+</svg>
