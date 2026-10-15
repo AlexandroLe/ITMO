@@ -1,0 +1,16 @@
+1. Проверьте связность (Ping с R1 на R2):
+R1:
+ping 10.0.12.2
+
+2. Проверьте вход по AAA (Telnet с R1 на R2):
+R1:
+telnet 10.0.12.2
+
+Username: hcia@datacom
+Password: HCIA-Datacom
+
+3. Посмотрите активного пользователя на сервере R2:
+R2:
+display users
+
+В таблице должна появиться строчка с типом TEL, логином hcia@datacom и статусом pass
