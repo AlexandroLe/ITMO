@@ -1,0 +1,6 @@
+../Core/Src/lock_fsm.c:42:13:update_oled_display	88	static
+../Core/Src/lock_fsm.c:123:6:lock_fsm_init	8	static
+../Core/Src/lock_fsm.c:142:6:lock_fsm_reset	8	static
+../Core/Src/lock_fsm.c:154:13:handle_protocol_command	80	static
+../Core/Src/lock_fsm.c:239:6:lock_fsm_process_char	64	static
+../Core/Src/lock_fsm.c:346:6:lock_fsm_update	24	static

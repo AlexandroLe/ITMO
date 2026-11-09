@@ -1,0 +1,5 @@
+../Core/Src/eeprom.c:6:6:eeprom_init	16	static
+../Core/Src/eeprom.c:11:6:eeprom_write	40	static
+../Core/Src/eeprom.c:39:6:eeprom_read	40	static
+../Core/Src/eeprom.c:58:6:eeprom_load_password	48	static
+../Core/Src/eeprom.c:94:6:eeprom_save_password	24	static

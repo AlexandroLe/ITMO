@@ -1,0 +1,9 @@
+../Drivers/CMSIS/Include/core_cm4.h:1688:22:__NVIC_EnableIRQ	16	static
+../Core/Inc/ring_buffer.h:15:20:ring_buffer_init	16	static
+../Core/Inc/ring_buffer.h:28:20:ring_buffer_put	24	static
+../Core/Inc/ring_buffer.h:38:20:ring_buffer_get	16	static
+../Core/Src/uart_driver.c:7:6:uart_driver_init	16	static
+../Core/Src/uart_driver.c:22:6:uart_driver_read_char	24	static
+../Core/Src/uart_driver.c:36:6:uart_driver_write_char	16	static
+../Core/Src/uart_driver.c:46:6:uart_driver_write_string	16	static
+../Core/Src/uart_driver.c:54:6:uart_driver_irq_handler	24	static

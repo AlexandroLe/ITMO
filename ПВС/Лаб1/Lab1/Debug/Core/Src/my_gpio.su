@@ -1,0 +1,7 @@
+../Core/Src/my_gpio.c:11:6:my_gpio_init	32	static
+../Core/Src/my_gpio.c:60:6:my_gpio_get_config	40	static
+../Core/Src/my_gpio.c:95:6:my_gpio_write_pin	16	static
+../Core/Src/my_gpio.c:106:9:my_gpio_read_pin	16	static
+../Core/Src/my_gpio.c:112:6:my_gpio_toggle_pin	24	static
+../Core/Src/my_gpio.c:119:6:my_gpio_write_port	24	static
+../Core/Src/my_gpio.c:128:10:my_gpio_read_port	16	static

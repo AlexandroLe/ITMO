@@ -1,0 +1,2 @@
+../Core/Src/lock_fsm.c:47:6:lock_fsm_init	8	static
+../Core/Src/lock_fsm.c:57:6:lock_fsm_update	16	static
